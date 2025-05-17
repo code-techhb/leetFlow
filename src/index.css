@@ -1,0 +1,43 @@
+:root {
+  --primary: #d4c1ec;
+  --primary-light: #e2d6f5;
+  --primary-dark: #b6a4d4;
+
+  /* Neutral  */
+  --background: #f9f7fc;
+  --surface: #ffffff;
+  --text: #161619;
+  --text-secondary: #4d4765;
+
+  /* Accent  */
+  --accent: #a0d2db;
+  --accent-light: #c4e3e9;
+
+  /* Feedback */
+  --success: #c1e8d6;
+  --warning: #f2e3bc;
+  --error: #f5c6cb;
+
+  /* Border */
+  --border: #eae6f2;
+  --shadow: rgba(212, 193, 236, 0.2);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--text);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
