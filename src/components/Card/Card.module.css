@@ -1,0 +1,47 @@
+.cardContainer {
+  background-color: var(--surface);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px var(--shadow);
+  padding: 0;
+  margin: 1rem 0;
+  transition: box-shadow 0.2s;
+  overflow: hidden;
+}
+
+.cardContainer:hover {
+  box-shadow: 0 4px 16px var(--shadow);
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid var(--border);
+  background-color: var(--primary-light);
+}
+
+.cardTitle {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.progressInfo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.progressText {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.items {
+  padding: 1rem 1.5rem;
+}

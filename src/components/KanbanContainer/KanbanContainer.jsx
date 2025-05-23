@@ -1,12 +1,17 @@
+import styles from "./KanbanContainer.module.css";
 import KanbanBtn from "../KanbanBtn/KanbanBtn";
 import Card from "../Card/Card";
 const KanbanContainer = () => {
   return (
-    <div>
-      <div>Kanban Container</div>
+    <section className={styles.wrapper}>
       <KanbanBtn />
-      <Card />
-    </div>
+      <div className={styles.kanban}>
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+      </div>
+    </section>
   );
 };
 

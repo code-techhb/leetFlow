@@ -1,10 +1,19 @@
-import React from "react";
+import Item from "../Item/Item";
+import styles from "./Card.module.css";
 
 const Card = () => {
   return (
-    <div>
-      <h1>Card container</h1>
-    </div>
+    <article className={styles.cardContainer}>
+      <header className={styles.cardHeader}>
+        <h2 className={styles.cardTitle}>Array</h2>
+        <div className={styles.progressInfo}>
+          <span className={styles.progressText}>0 / 3</span>
+        </div>
+      </header>
+      <div className={styles.items}>
+        <Item />
+      </div>
+    </article>
   );
 };
 

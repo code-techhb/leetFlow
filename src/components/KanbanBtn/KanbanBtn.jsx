@@ -1,9 +1,6 @@
+import styles from "./KanbanBtn.module.css";
 const KanbanBtn = () => {
-  return (
-    <div>
-      <button>I'm a button</button>
-    </div>
-  );
+  return <button className={styles.btn}>➕ Add New LC Problem</button>;
 };
 
 export default KanbanBtn;

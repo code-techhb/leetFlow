@@ -1,8 +1,11 @@
+import styles from "./Header.module.css";
+
 const Header = () => {
   return (
-    <div>
+    <header className={styles.header}>
       <h1>Leetcode Kanban</h1>
-    </div>
+      <p>The solution to your Leetcode Procrastination 😎</p>
+    </header>
   );
 };
 
