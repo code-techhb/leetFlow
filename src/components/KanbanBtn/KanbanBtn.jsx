@@ -1,6 +1,11 @@
 import styles from "./KanbanBtn.module.css";
-const KanbanBtn = () => {
-  return <button className={styles.btn}>➕ Add New LC Problem</button>;
+
+const KanbanBtn = ({ toggleModal }) => {
+  return (
+    <button className={styles.btn} onClick={toggleModal}>
+      ➕ Add New LC Problem
+    </button>
+  );
 };
 
 export default KanbanBtn;
