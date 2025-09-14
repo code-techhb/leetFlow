@@ -1,0 +1,62 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+:root {
+  --primary: #d4c1ec;
+  --primary-light: #e2d6f5;
+  --primary-dark: #b6a4d4;
+
+  /* Neutral  */
+  --background: #f9f7fc;
+  --surface: #f8f0ff;
+  --text: #161619;
+  --text-secondary: #4d4765;
+
+  /* Accent  */
+  --accent: #a0d2db;
+  --accent-light: #c4e3e9;
+
+  /* Feedback */
+  --success: #c1e8d6;
+  --warning: #f2e3bc;
+  --error: #f5c6cb;
+
+  /* Border */
+  --border: #eae6f2;
+  --shadow: rgba(212, 193, 236, 0.2);
+  --btn-shadow: rgba(157, 123, 198, 0.4);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background-color: var(--background);
+  color: var(--text);
+}
+
+.appContainer {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.appContainer > :first-child {
+  flex: 0 0 auto;
+}
+
+.appContainer > :nth-child(2) {
+  flex: 1 1 auto;
+}
+
+.appContainer > :last-child {
+  flex: 0 0 auto;
+}

@@ -1,0 +1,160 @@
+.problemItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  margin-bottom: 0.8rem;
+  background-color: var(--background);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.problemItem:hover {
+  background-color: var(--primary-light);
+  border-color: var(--primary);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px var(--shadow);
+}
+
+.problemInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex: 1;
+}
+
+.problemHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.problemTitle {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text);
+  line-height: 1.3;
+}
+
+.deleteButton {
+  background: none;
+  border: none;
+  color: var(--error);
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background-color 0.2s;
+}
+
+.deleteButton:hover {
+  background-color: var(--error);
+  color: white;
+}
+
+.problemMeta {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.difficulty {
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.2rem 0.6rem;
+  border-radius: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.difficultyEasy {
+  background-color: var(--success);
+  color: var(--text);
+}
+
+.difficultyMedium {
+  background-color: var(--warning);
+  color: var(--text);
+}
+
+.difficultyHard {
+  background-color: var(--error);
+  color: var(--text);
+}
+
+.difficultyDefault {
+  background-color: var(--border);
+  color: var(--text-secondary);
+}
+
+.problemLink {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.2s;
+}
+
+.problemLink:hover {
+  color: var(--accent);
+}
+
+.actionArea {
+  display: flex;
+  align-items: center;
+  margin-left: 1rem;
+}
+
+.solveButton {
+  background-color: var(--success);
+  border: none;
+  color: var(--text);
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 0.5rem;
+  border-radius: 50%;
+  cursor: pointer;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.solveButton:hover {
+  background-color: var(--accent);
+  transform: scale(1.1);
+}
+
+.checkbox {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  accent-color: var(--primary);
+}
+
+.completedIcon {
+  font-size: 1.5rem;
+  animation: bounce 0.5s ease-in-out;
+}
+
+@keyframes bounce {
+  0%,
+  20%,
+  60%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  80% {
+    transform: translateY(-5px);
+  }
+}

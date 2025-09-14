@@ -1,0 +1,70 @@
+.footer {
+<<<<<<< HEAD
+  background-color: var(--primary);
+  color: var(--text);
+  border-top: 1px solid var(--border);
+  padding: 1rem 2rem;
+  width: 100%;
+}
+
+.statsContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.totalProblems {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.statsBreakdown {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.statItem {
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.statNumber {
+  font-weight: 700;
+  color: var(--text);
+  background-color: var(--primary-dark);
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  min-width: 24px;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .statsContainer {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.5rem;
+  }
+
+  .statsBreakdown {
+    justify-content: center;
+    gap: 1rem;
+  }
+}
+=======
+  text-align: center;
+  padding: 1rem 2rem;
+  margin-top: 1rem;
+  background-color: var(--primary);
+  color: var(--text);
+  border-top: 1px solid var(--text);
+  font-size: 1.5rem;
+  width: 100%;
+}
+>>>>>>> 14001f7 (🚀 add static kanban)
