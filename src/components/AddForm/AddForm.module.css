@@ -141,3 +141,9 @@
 .submitButton:active {
   transform: translateY(0);
 }
+
+.submitButton:disabled {
+  background-color: var(--success);
+  cursor: not-allowed;
+  transform: none;
+}

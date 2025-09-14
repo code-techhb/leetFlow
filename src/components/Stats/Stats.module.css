@@ -1,5 +1,4 @@
 .footer {
-<<<<<<< HEAD
   background-color: var(--primary);
   color: var(--text);
   border-top: 1px solid var(--border);
@@ -57,14 +56,3 @@
     gap: 1rem;
   }
 }
-=======
-  text-align: center;
-  padding: 1rem 2rem;
-  margin-top: 1rem;
-  background-color: var(--primary);
-  color: var(--text);
-  border-top: 1px solid var(--text);
-  font-size: 1.5rem;
-  width: 100%;
-}
->>>>>>> 14001f7 (🚀 add static kanban)

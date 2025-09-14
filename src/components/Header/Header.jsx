@@ -3,8 +3,16 @@ import styles from "./Header.module.css";
 const Header = () => {
   return (
     <header className={styles.header}>
-      <h1>Leetcode Kanban</h1>
-      <p>The solution to your Leetcode Procrastination 😎</p>
+      <div className={styles.headerContent}>
+        <h1 className={styles.title}>
+          <span className={styles.emoji}>🧠</span>
+          LeetCode Kanban
+          <span className={styles.emoji}>⚡</span>
+        </h1>
+        <p className={styles.subtitle}>
+          The solution to your Leetcode Procrastination 😎
+        </p>
+      </div>
     </header>
   );
 };

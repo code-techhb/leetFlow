@@ -7,7 +7,7 @@ const AddForm = ({ onClose, onSubmit }) => {
     difficulty: "",
     url: "",
   });
-
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [errors, setErrors] = useState({});
 
   const handleInputChange = (e) => {
@@ -45,17 +45,23 @@ const AddForm = ({ onClose, onSubmit }) => {
     e.preventDefault();
 
     if (validateForm()) {
-      onSubmit({
-        title: formData.title.trim(),
-        difficulty: formData.difficulty,
-        url: formData.url.trim(),
-      });
+      setIsSubmitting(true);
 
-      setFormData({
-        title: "",
-        difficulty: "",
-        url: "",
-      });
+      setTimeout(() => {
+        onSubmit({
+          title: formData.title.trim(),
+          difficulty: formData.difficulty,
+          url: formData.url.trim(),
+        });
+
+        setFormData({
+          title: "",
+          difficulty: "",
+          url: "",
+        });
+
+        setIsSubmitting(false);
+      }, 500);
     }
   };
 
@@ -129,8 +135,12 @@ const AddForm = ({ onClose, onSubmit }) => {
             >
               Cancel
             </button>
-            <button type="submit" className={styles.submitButton}>
-              Add Problem
+            <button
+              type="submit"
+              className={styles.submitButton}
+              disabled={isSubmitting}
+            >
+              {isSubmitting ? "✓ Adding..." : "Add Problem"}
             </button>
           </div>
         </form>

@@ -2,12 +2,14 @@ import Header from "./components/Header/Header";
 import KanbanContainer from "./components/KanbanContainer/KanbanContainer";
 import Stats from "./components/Stats/Stats";
 import AddForm from "./components/AddForm/AddForm";
+import Confetti from "./components/Confetti/Confetti";
 import { useState, useEffect } from "react";
 import "./index.css";
 
 const App = () => {
   const [modal, setModal] = useState(false);
   const [problems, setProblems] = useState([]);
+  const [showConfetti, setShowConfetti] = useState(false);
 
   // Load problems from localStorage on component mount
   useEffect(() => {
@@ -59,6 +61,10 @@ const App = () => {
         problem.id === problemId ? { ...problem, status: newStatus } : problem
       )
     );
+
+    if (newStatus === "mastered") {
+      setShowConfetti(true);
+    }
   };
 
   const deleteProblem = (problemId) => {
@@ -89,6 +95,10 @@ const App = () => {
       />
       {modal && <AddForm onClose={closeModal} onSubmit={addProblem} />}
       <Stats stats={stats} />
+      <Confetti
+        trigger={showConfetti}
+        onComplete={() => setShowConfetti(false)}
+      />
     </div>
   );
 };

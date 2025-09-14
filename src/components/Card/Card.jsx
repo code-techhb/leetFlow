@@ -21,7 +21,7 @@ const Card = ({
       <div className={styles.items}>
         {problems.length === 0 ? (
           <div className={styles.emptyState}>
-            <p>No problems yet</p>
+            <p>Practice some Leetcode 🤓</p>
           </div>
         ) : (
           problems.map((problem) => (
