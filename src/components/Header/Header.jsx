@@ -6,8 +6,8 @@ const Header = () => {
       <div className={styles.headerContent}>
         <h1 className={styles.title}>
           <span className={styles.emoji}>🧠</span>
-          LeetCode Kanban
-          <span className={styles.emoji}>⚡</span>
+          LeetFlow
+          <span className={styles.emoji}>👩🏽‍💻</span>
         </h1>
         <p className={styles.subtitle}>
           The solution to your Leetcode Procrastination 😎

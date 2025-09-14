@@ -4,9 +4,11 @@ import Card from "../Card/Card";
 
 const KanbanContainer = ({
   onToggleModal,
-  // problems,
+  problems,
   onMoveProblem,
   onDeleteProblem,
+  onClearAll,
+  onResetProgress,
   getProblemsByStatus,
 }) => {
   const cardConfigs = [
@@ -28,7 +30,7 @@ const KanbanContainer = ({
     },
     {
       id: "reviewed",
-      title: "Problems Reviewed",
+      title: "Review",
       status: "reviewed",
       nextStatus: "mastered",
       actionType: "checkbox",
@@ -36,17 +38,39 @@ const KanbanContainer = ({
     },
     {
       id: "mastered",
-      title: "Problems Mastered",
+      title: "Mastered",
       status: "mastered",
       nextStatus: null,
       actionType: "completed",
       actionText: "Mastered!",
     },
   ];
+  const hasProgress = problems.some((problem) => problem.status !== "problems");
 
   return (
     <section className={styles.wrapper}>
-      <KanbanBtn toggleModal={onToggleModal} />
+      <div className={styles.buttonGroup}>
+        <KanbanBtn toggleModal={onToggleModal} />
+        <button
+          className={`${styles.resetButton} ${
+            !hasProgress ? styles.disabled : ""
+          }`}
+          onClick={onResetProgress}
+          disabled={!hasProgress}
+        >
+          🔄 Reset Progress
+        </button>
+        <button
+          className={`${styles.clearButton} ${
+            problems.length === 0 ? styles.disabled : ""
+          }`}
+          onClick={onClearAll}
+          disabled={problems.length === 0}
+        >
+          🗑️ Clear All
+        </button>
+      </div>
+
       <div className={styles.kanban}>
         {cardConfigs.map((config) => (
           <Card

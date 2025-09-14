@@ -55,6 +55,30 @@ const App = () => {
     closeModal();
   };
 
+  // Clear or Reset Progress
+  const clearAllProblems = () => {
+    if (
+      window.confirm(
+        "Are you sure you want to delete ALL problems? This cannot be undone."
+      )
+    ) {
+      setProblems([]);
+      localStorage.removeItem("leetcode-problems");
+    }
+  };
+
+  const resetProgress = () => {
+    if (
+      window.confirm(
+        'Are you sure you want to reset ALL progress? All problems will move back to "Problems" column.'
+      )
+    ) {
+      setProblems((prev) =>
+        prev.map((problem) => ({ ...problem, status: "problems" }))
+      );
+    }
+  };
+
   const moveProblem = (problemId, newStatus) => {
     setProblems((prev) =>
       prev.map((problem) =>
@@ -92,6 +116,8 @@ const App = () => {
         onMoveProblem={moveProblem}
         onDeleteProblem={deleteProblem}
         getProblemsByStatus={getProblemsByStatus}
+        onClearAll={clearAllProblems}
+        onResetProgress={resetProgress}
       />
       {modal && <AddForm onClose={closeModal} onSubmit={addProblem} />}
       <Stats stats={stats} />
