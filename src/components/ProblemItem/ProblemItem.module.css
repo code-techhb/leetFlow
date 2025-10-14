@@ -144,6 +144,12 @@
   animation: bounce 0.5s ease-in-out;
 }
 
+.dateAdded {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  font-weight: 400;
+}
+
 @keyframes bounce {
   0%,
   20%,

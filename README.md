@@ -50,10 +50,19 @@ This isn't meant to replace LeetCode or other platforms. It's meant to make your
 2. **Solve Initially**: Move to "Solved Once" after your initial successful attempt
 3. **Review Strategically**: When you're ready, tackle the problem again to move it to "Review"
 4. **Final Review**: Solve it one more time to reach Problems "Mastered"
-5. **Achieve Mastery**: Final stage confirms you've internalized the solution pattern
+5. **Track Your Journey**: See dates for when you added and completed each stage
 6. **Celebrate Mastery**: Get confetti when problems reach "Mastered" status – you've earned it 🥳👏🏾!
 
-The magic happens in the **gaps between stages** – that's where spaced repetition works its magic on your memory 😉.
+## 🧠 The Science Behind the Flow
+
+LeetFlow uses **spaced repetition**, a learning technique proven to improve long-term retention:
+
+- **Problems**: Initial exposure - solve when ready 💪
+- **Solved Once**: First review in 2-3 days to lock it in 🔒
+- **Review**: Final review in 1-2 weeks for mastery 🚀
+- **Mastered**: Pattern internalized! Interview ready! 🎉
+
+Each column shows recommended timing, and dates help you track your spacing naturally.
 
 ## 🚀 Try It Live
 

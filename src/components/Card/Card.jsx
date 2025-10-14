@@ -3,6 +3,7 @@ import styles from "./Card.module.css";
 
 const Card = ({
   title,
+  recommendation,
   problems,
   onMoveProblem,
   onDeleteProblem,
@@ -13,7 +14,10 @@ const Card = ({
   return (
     <article className={styles.cardContainer}>
       <header className={styles.cardHeader}>
-        <h2 className={styles.cardTitle}>{title}</h2>
+        <div className={styles.headerContent}>
+          <h2 className={styles.cardTitle}>{title}</h2>
+          <p className={styles.recommendation}>{recommendation}</p>
+        </div>
         <div className={styles.progressInfo}>
           <span className={styles.progressText}>{problems.length}</span>
         </div>

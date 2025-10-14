@@ -65,6 +65,27 @@ const ProblemItem = ({
     }
   };
 
+  const formatDate = (isoDate) => {
+    if (!isoDate) return null;
+    const date = new Date(isoDate);
+    return date.toLocaleDateString("en-US", { month: "short", day: "numeric" });
+  };
+
+  const getDateForStatus = () => {
+    switch (problem.status) {
+      case "problems":
+        return problem.createdAt;
+      case "solved-once":
+        return problem.solvedAt;
+      case "reviewed":
+        return problem.reviewedAt;
+      case "mastered":
+        return problem.masteredAt;
+      default:
+        return problem.createdAt;
+    }
+  };
+
   return (
     <div
       className={styles.problemItem}
@@ -93,6 +114,11 @@ const ProblemItem = ({
           >
             {problem.difficulty}
           </span>
+
+          <span className={styles.dateAdded}>
+            📅 {formatDate(getDateForStatus())}
+          </span>
+
           {problem.url && (
             <a
               href={problem.url}
