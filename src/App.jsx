@@ -49,6 +49,9 @@ const App = () => {
       url: problemData.url || "",
       status: "problems",
       createdAt: new Date().toISOString(),
+      solvedAt: null,
+      reviewedAt: null,
+      masteredAt: null,
     };
 
     setProblems((prev) => [...prev, newProblem]);
@@ -81,9 +84,22 @@ const App = () => {
 
   const moveProblem = (problemId, newStatus) => {
     setProblems((prev) =>
-      prev.map((problem) =>
-        problem.id === problemId ? { ...problem, status: newStatus } : problem
-      )
+      prev.map((problem) => {
+        if (problem.id === problemId) {
+          const updates = { ...problem, status: newStatus };
+
+          if (newStatus === "solved-once") {
+            updates.solvedAt = new Date().toISOString();
+          } else if (newStatus === "reviewed") {
+            updates.reviewedAt = new Date().toISOString();
+          } else if (newStatus === "mastered") {
+            updates.masteredAt = new Date().toISOString();
+          }
+
+          return updates;
+        }
+        return problem;
+      })
     );
 
     if (newStatus === "mastered") {

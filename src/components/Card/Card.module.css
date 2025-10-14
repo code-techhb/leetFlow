@@ -25,6 +25,18 @@
   background-color: var(--primary-light);
 }
 
+.headerContent {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.recommendation {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  font-weight: 400;
+}
+
 .cardTitle {
   margin: 0;
   font-size: 1.25rem;

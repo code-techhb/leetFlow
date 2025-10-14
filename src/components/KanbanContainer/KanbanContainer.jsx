@@ -19,6 +19,7 @@ const KanbanContainer = ({
       nextStatus: "solved-once",
       actionType: "solve",
       actionText: "Mark as Solved",
+      recommendation: "Ready to start? Let's go 💪🏾!",
     },
     {
       id: "solved-once",
@@ -27,6 +28,7 @@ const KanbanContainer = ({
       nextStatus: "reviewed",
       actionType: "checkbox",
       actionText: "Mark as Reviewed",
+      recommendation: "Come back in 2-3 days to lock it in 🔒!",
     },
     {
       id: "reviewed",
@@ -35,6 +37,7 @@ const KanbanContainer = ({
       nextStatus: "mastered",
       actionType: "checkbox",
       actionText: "Mark as Mastered",
+      recommendation: "Final push in 1-2 weeks - you got this 🚀!",
     },
     {
       id: "mastered",
@@ -43,6 +46,7 @@ const KanbanContainer = ({
       nextStatus: null,
       actionType: "completed",
       actionText: "Mastered!",
+      recommendation: "Conquered! You're unstoppable 🎉✨!",
     },
   ];
   const hasProgress = problems.some((problem) => problem.status !== "problems");
@@ -76,6 +80,7 @@ const KanbanContainer = ({
           <Card
             key={config.id}
             title={config.title}
+            recommendation={config.recommendation}
             problems={getProblemsByStatus(config.status)}
             onMoveProblem={onMoveProblem}
             onDeleteProblem={onDeleteProblem}
