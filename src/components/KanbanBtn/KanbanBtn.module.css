@@ -1,22 +1,99 @@
-.btn {
-  border: none;
-  background: linear-gradient(135deg, var(--accent), var(--accent-light));
+.buttonGroup {
+  display: flex;
+  width: 100%;
+  gap: 1rem;
+  align-items: center;
+  justify-content: flex-end;
+  margin-bottom: 2rem;
+  padding: 0 2rem;
+}
+
+.searchContainer {
+  flex: 1;
+  max-width: 400px;
+  margin-left: auto;
+  position: relative;
+}
+
+.searchInput {
+  width: 100%;
+  padding: 1rem 1.2rem;
+  font-size: 1.5rem;
+  font-family: "Inter", sans-serif;
+  border: 2px solid var(--border);
+  border-radius: 8px;
+  background-color: var(--surface);
   color: var(--text);
+  transition: all 0.3s ease;
+}
+
+.searchInput:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px var(--shadow);
+}
+
+.searchInput::placeholder {
+  color: var(--text-secondary);
+  opacity: 0.7;
+}
+
+.clearSearch {
+  position: absolute !important;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  font-size: 2rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  width: 2.8rem;
+  height: 2.8rem;
+  transition: all 0.2s ease;
+  line-height: 1;
+}
+
+.clearSearch:hover {
+  background-color: var(--border);
+  color: var(--text);
+}
+
+.clearSearch:active {
+  transform: translateY(-50%) scale(0.95);
+}
+
+.addBtn,
+.resetBtn,
+.clearBtn {
   padding: 1.2rem 2rem;
+  border: none;
   border-radius: 8px;
   font-size: 1.1rem;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 12px rgba(160, 210, 219, 0.3);
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  position: relative;
-  overflow: hidden;
+  white-space: nowrap;
 }
 
-.btn::before {
+.addBtn {
+  background: linear-gradient(135deg, var(--accent), var(--accent-light));
+  color: var(--text);
+  box-shadow: 0 4px 12px rgba(160, 210, 219, 0.3);
+  position: relative;
+  overflow: hidden;
+  border: 2px solid var(--accent);
+}
+
+.addBtn::before {
   content: "";
   position: absolute;
   top: 0;
@@ -32,24 +109,94 @@
   transition: left 0.5s;
 }
 
-.btn:hover {
+.addBtn:hover {
   transform: translateY(-2px);
   box-shadow: 0 8px 20px rgba(160, 210, 219, 0.4);
   background: linear-gradient(135deg, var(--accent-light), var(--accent));
 }
 
-.btn:hover::before {
+.addBtn:hover::before {
   left: 100%;
 }
 
-.btn:active {
-  transform: translateY(0);
-  box-shadow: 0 4px 12px rgba(160, 210, 219, 0.3);
+.resetBtn {
+  background-color: var(--warning);
+  color: var(--text);
+  box-shadow: 0 4px 12px rgba(242, 227, 188, 0.3);
+  border: 2px solid #fad577ff;
+}
+
+.resetBtn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(242, 227, 188, 0.4);
+}
+
+.clearBtn {
+  background-color: var(--error);
+  color: var(--text);
+  box-shadow: 0 4px 12px rgba(245, 198, 203, 0.3);
+  border: 2px solid #f9a5adff;
+}
+
+.clearBtn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(245, 198, 203, 0.4);
+}
+
+.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.disabled:hover {
+  transform: none;
+}
+
+.searchInput:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background-color: var(--border);
+}
+
+.searchInput.disabled::placeholder {
+  color: var(--text-secondary);
+  opacity: 0.5;
 }
 
 @media (max-width: 768px) {
-  .btn {
+  .buttonGroup {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    padding: 0 1rem;
+  }
+
+  .searchContainer {
+    grid-column: 1 / -1;
+    max-width: 100%;
+    margin-left: 0;
+  }
+
+  .addBtn {
+    grid-column: 1 / -1;
+  }
+
+  .resetBtn {
+    grid-column: 1 / 2;
+  }
+
+  .clearBtn {
+    grid-column: 2 / 3;
+  }
+
+  .addBtn,
+  .resetBtn,
+  .clearBtn {
     padding: 1rem 1.5rem;
     font-size: 1rem;
+  }
+
+  .searchInput {
+    font-size: 1.4rem;
   }
 }
