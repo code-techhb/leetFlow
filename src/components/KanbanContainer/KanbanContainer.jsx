@@ -10,6 +10,8 @@ const KanbanContainer = ({
   onClearAll,
   onResetProgress,
   getProblemsByStatus,
+  searchQuery,
+  onSearchChange,
 }) => {
   const cardConfigs = [
     {
@@ -49,31 +51,20 @@ const KanbanContainer = ({
       recommendation: "Conquered! You're unstoppable 🎉✨!",
     },
   ];
+
   const hasProgress = problems.some((problem) => problem.status !== "problems");
 
   return (
     <section className={styles.wrapper}>
-      <div className={styles.buttonGroup}>
-        <KanbanBtn toggleModal={onToggleModal} />
-        <button
-          className={`${styles.resetButton} ${
-            !hasProgress ? styles.disabled : ""
-          }`}
-          onClick={onResetProgress}
-          disabled={!hasProgress}
-        >
-          🔄 Reset Progress
-        </button>
-        <button
-          className={`${styles.clearButton} ${
-            problems.length === 0 ? styles.disabled : ""
-          }`}
-          onClick={onClearAll}
-          disabled={problems.length === 0}
-        >
-          🗑️ Clear All
-        </button>
-      </div>
+      <KanbanBtn
+        toggleModal={onToggleModal}
+        onClearAll={onClearAll}
+        onResetProgress={onResetProgress}
+        searchQuery={searchQuery}
+        onSearchChange={onSearchChange}
+        hasProblems={problems.length > 0}
+        hasProgress={hasProgress}
+      />
 
       <div className={styles.kanban}>
         {cardConfigs.map((config) => (

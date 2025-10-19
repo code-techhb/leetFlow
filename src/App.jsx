@@ -9,6 +9,7 @@ import "./index.css";
 const App = () => {
   const [modal, setModal] = useState(false);
   const [problems, setProblems] = useState([]);
+  const [searchQuery, setSearchQuery] = useState("");
   const [showConfetti, setShowConfetti] = useState(false);
 
   // Load problems from localStorage on component mount
@@ -123,6 +124,24 @@ const App = () => {
     mastered: getProblemsByStatus("mastered").length,
   };
 
+  // search
+  const filteredProblems =
+    searchQuery.trim() === ""
+      ? problems
+      : problems.filter((problem) =>
+          problem.title.toLowerCase().includes(searchQuery.toLowerCase())
+        );
+
+  const getFilteredProblemsByStatus = (status) => {
+    return filteredProblems.filter((problem) => problem.status === status);
+  };
+
+  useEffect(() => {
+    if (problems.length === 0) {
+      setSearchQuery("");
+    }
+  }, [problems.length]);
+
   return (
     <div className="appContainer">
       <Header />
@@ -131,9 +150,12 @@ const App = () => {
         problems={problems}
         onMoveProblem={moveProblem}
         onDeleteProblem={deleteProblem}
-        getProblemsByStatus={getProblemsByStatus}
+        searchQuery={searchQuery}
+        onSearchChange={setSearchQuery}
+        getProblemsByStatus={getFilteredProblemsByStatus}
         onClearAll={clearAllProblems}
         onResetProgress={resetProgress}
+        hasProblems={problems.length > 0}
       />
       {modal && <AddForm onClose={closeModal} onSubmit={addProblem} />}
       <Stats stats={stats} />
